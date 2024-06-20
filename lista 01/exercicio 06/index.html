@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botão de Mudança de Cor</title>
+</head>
+<body>
+
+<button onclick="mudarCor()">Mudar Cor verde</button>
+
+<script>
+  function mudarCor() {
+    var cores = ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"];
+    var corAleatoria = cores[Math.floor(Math.random() * cores.length)];
+    document.body.style.backgroundColor = corAleatoria;
+  }
+</script>
+
+</body>
+</html>    

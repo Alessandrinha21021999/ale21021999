@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+</head>
+<body>
+
+  <input type="number" id="n1">
+  
+  <select id="o">
+    <option value="a">+</option>
+    <option value="s">-</option>
+    <option value="m">*</option>
+    <option value="d">/</option>
+  </select>
+  
+  <input type="number" id="n2">
+  
+  <button onclick="c()">Calcular 2 + 2</button>
+  
+  <p id="r"></p>
+
+  <script>
+    function c() {
+      var n1 = +document.getElementById('n1').value;
+      var n2 = +document.getElementById('n2').value;
+      var o = document.getElementById('o').value;
+      var r;
+
+      switch (o) {
+        case 'a': r = n1 + n2; break;
+        case 's': r = n1 - n2; break;
+        case 'm': r = n1 * n2; break;
+        case 'd': r = n2 !== 0 ? n1 / n2 : 'Erro: Divisão por zero'; break;
+        default: r = 'Operação inválida';
+      }
+
+      document.getElementById('r').textContent = 'Resultado: ' + r;
+    }
+  </script>
+
+</body>
+</html>
