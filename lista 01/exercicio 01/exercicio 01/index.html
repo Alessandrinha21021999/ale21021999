@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Saudação Personalizada </title>
+<meta charset="UTF-8">
+<meta name="alessandra moretti">
+<title>Cumprimento Personalizado</title>
 </head>
-<body>
-  <input type="sou gremista " id="eu" placeholder="digite aqui">
-  <button onclck="exibirSaudacao()">Exibir Saudação </button>
-  <p id="mensagem"></p>
+    <body> 
+       
+        <input id="nome1"/>
 
-  <script src="script.js"></script>
+        <button onclick="exibirMensagem()" id="botao"> Clique </button>
+
+        <p id="mensagem"></p>  
+
+    
+<body>
+<script>
+        function exibirMensagem() {
+        var nome = document.getElementById("nome1").value;
+         var mensagem = "Olá " +nome+" , este é meu site."
+         document.getElementById("mensagem").innerText = mensagem;
+         
+     }
+</script>
 </body>
 </html>

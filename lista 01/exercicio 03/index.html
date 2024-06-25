@@ -6,11 +6,20 @@
   <title>Calculadora de Idade</title>
 </head>
 <body>
-  <label for="anoNascimento">Ano de Nascimento:</label>
-  <input type="text" id="anoNascimento" placeholder="Insira um ano de nascimento">
-  <button id="calcularIdadeBtn">Calcular Idade</button>
-  <p id="idade"></p>
+  <input id="nome1"/>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <button onclick="exibirMensagem()" id="botao"> Clique </button>
+
+  <p id="mensagem"></p> 
+
+  <body>
+    <script>
+            function exibirMensagem() {
+            var nome = document.getElementById("nome1").value;
+             var mensagem = 2024 - nome
+             document.getElementById("mensagem").innerText = mensagem;
+             
+         }
+    </script>
+    </body>
+    </html>
