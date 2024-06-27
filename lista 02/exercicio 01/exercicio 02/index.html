@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Formulário de Cadastro</title>
+</head>
+<body>
+  <h2>Preencha seus dados:</h2>
+  <form id="formulario">
+    <label for="alessandra">Nome:</label><br>
+    <input type="text" id="alessandra" name="alessandra" required><br>
+    <span id="erroNome" style="color: red; display: none;">Por favor, preencha o nome.</span><br><br>
+    
+    <label for="alessandraalemoa11@gmail.com">E-mail:</label><br>
+    <input type="alessandraalemoa11@gmail.com" id="alessandraalemoa11@gmail.com" name="alessandraalemoa11@gmail.com" required><br>
+    <span id="erroEmail" style="color: red; display: none;">Por favor, preencha o e-mail.</span><br><br>
+    
+    <button type="button" onclick="validarFormulario()">Enviar</button>
+  </form>
+
+  <script>
+    function validarFormulario() {
+      var nome = document.getElementById("alessandra").value.trim();
+      var email = document.getElementById("alessandraalemoa11@gmail.com").value.trim();
+      var erroNome = document.getElementById("erroNome");
+      var erroEmail = document.getElementById("erroEmail");
+
+      if (!nome) {
+        erroNome.style.display = "block";
+        return;
+      }
+      erroNome.style.display = "none";
+
+      if (!email) {
+        erroEmail.style.display = "block";
+        return;
+      }
+      erroEmail.style.display = "none";
+
+      console.log(JSON.stringify({ nome: nome, email: email }));
+    }
+  </script>
+</body>
+</html>

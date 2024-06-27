@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Formulário de Cadastro</title>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 50%;
+    margin-top: 20px;
+  }
+  table, th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+</head>
+<body>
+  <h2>Preencha seus dados:</h2>
+  <form id="formulario">
+    <label for="alessandra">Nome:</label><br>
+    <input type="text" id="alessandra" name="alessandra" required><br><br>
+    <label for="alessandraalemoa11@gmail.com">E-mail:</label><br>
+    <input type="alessandraalemoa11@gmail.com" id="alessandraalemoa11@gmail.com" name="alessandraalemoa11@gmail.com" required><br><br>
+    <button type="button" onclick="exibirDados()">Enviar</button>
+  </form>
+  <h2>Dados enviados:</h2>
+  <table id="tabelaDados">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <script>
+    function exibirDados() {
+      var nome = document.getElementById("nome").value;
+      var email = document.getElementById("email").value;
+
+      var tabela = document.getElementById("tabelaDados");
+      var newRow = tabela.insertRow();
+      var cell1 = newRow.insertCell(0);
+      var cell2 = newRow.insertCell(1);
+
+      cell1.textContent = nome;
+      cell2.textContent = email;
+    }
+  </script>
+</body>
+</html>
