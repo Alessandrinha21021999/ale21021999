@@ -1,44 +1,36 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Formulário de Cadastro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário de Coleta com Validação</title>
+<script>
+  function enviarFormulario() {
+    var nome = document.getElementById('nome').value;
+    var email = document.getElementById('email').value;
+    if (nome.trim() === '') {
+      alert('Por favor, preencha o campo Nome.');
+      return;
+    }
+    if (email.trim() === '') {
+      alert('Por favor, preencha o campo Email.');
+      return;
+    }
+    var dadosUsuario = {
+      nome: nome,
+      email: email
+    };
+    console.log(JSON.stringify(dadosUsuario));
+  }
+</script>
 </head>
 <body>
-  <h2>Preencha seus dados:</h2>
-  <form id="formulario">
-    <label for="alessandra">Nome:</label><br>
-    <input type="text" id="alessandra" name="alessandra" required><br>
-    <span id="erroNome" style="color: red; display: none;">Por favor, preencha o nome.</span><br><br>
-    
-    <label for="alessandraalemoa11@gmail.com">E-mail:</label><br>
-    <input type="alessandraalemoa11@gmail.com" id="alessandraalemoa11@gmail.com" name="alessandraalemoa11@gmail.com" required><br>
-    <span id="erroEmail" style="color: red; display: none;">Por favor, preencha o e-mail.</span><br><br>
-    
-    <button type="button" onclick="validarFormulario()">Enviar</button>
+  <h2>Formulário de Coleta com Validação</h2>
+  <form>
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome"><br><br>
+    <label for="email">E-mail:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+    <button type="button" onclick="enviarFormulario()">Enviar</button>
   </form>
-
-  <script>
-    function validarFormulario() {
-      var nome = document.getElementById("alessandra").value.trim();
-      var email = document.getElementById("alessandraalemoa11@gmail.com").value.trim();
-      var erroNome = document.getElementById("erroNome");
-      var erroEmail = document.getElementById("erroEmail");
-
-      if (!nome) {
-        erroNome.style.display = "block";
-        return;
-      }
-      erroNome.style.display = "none";   
-
-      if (!email) {
-        erroEmail.style.display = "block";
-        return;
-      }
-      erroEmail.style.display = "none";
-
-      console.log(JSON.stringify({ nome: nome, email: email }));
-    }
-  </script>
 </body>
 </html>

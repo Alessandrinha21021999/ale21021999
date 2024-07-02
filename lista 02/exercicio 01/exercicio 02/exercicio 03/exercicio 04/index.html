@@ -1,57 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt_br">
 <head>
 <meta charset="UTF-8">
-<title>Formulário de Cadastro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário e Tabela</title>
 <style>
-  table {
-    border-collapse: collapse;
-    width: 50%;
-    margin-top: 20px;
-  }
-  table, th, td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-  }
-  th {
-    background-color: #f2f2f2;
-  }
 </style>
+<script>
+  function adicionarUsuario() {
+    var nome = document.getElementById('nome').value;
+    var email = document.getElementById('email').value;
+  }
+</script>
 </head>
 <body>
-  <h2>Preencha seus dados:</h2>
-  <form id="formulario">
-    <label for="alessandra">Nome:</label><br>
-    <input type="text" id="alessandra" name="alessandra" required><br><br>
-    <label for="alessandraalemoa11@gmail.com">E-mail:</label><br>
-    <input type="alessandraalemoa11@gmail.com" id="alessandraalemoa11@gmail.com" name="alessandraalemoa11@gmail.com" required><br><br>
+  <h2>Formulário e Tabela</h2>
+  <form>
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome"><br><br>
+    <label for="email">E-mail:</label><br>
+    <input type="email" id="email" name="email"><br><br>
     <button type="button" onclick="adicionarUsuario()">Enviar</button>
   </form>
-  <h2>Lista de Usuários:</h2>
-  <table id="tabelaUsuarios"> 
+  <table id="tabelaUsuarios">
     <thead>
       <tr>
         <th>Nome</th>
         <th>E-mail</th>
       </tr>
     </thead>
-    <tbody id="corpoTabela">
+    <tbody>
     </tbody>
   </table>
-  <script>
-    function adicionarUsuario() {
-      var nome = document.getElementById("alessandra").value;
-      var email = document.getElementById("alessandraalemoa11@gmail.com").value;
-      var tabela = document.getElementById("tabelaUsuarios");
-      var corpoTabela = document.getElementById("corpoTabela");
-      var novaLinha = corpoTabela.insertRow();
-      var cellNome = novaLinha.insertCell(0);
-      var cellEmail = novaLinha.insertCell(1);
-      cellNome.textContent = nome;
-      cellEmail.textContent = email;
-      document.getElementById("formulario").reset();
-    }
-  </script>
 </body>
 </html>
