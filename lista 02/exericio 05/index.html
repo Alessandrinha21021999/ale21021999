@@ -26,6 +26,8 @@
 <body>
 <h2>Edição de Usuários</h2>
 <form id="formulario">
+    <input type="hidden" id="id" name="id">
+
     <label for="nome">Nome:</label><br>
     <input type="text" id="nome" name="nome" required><br><br>
 
@@ -63,15 +65,18 @@ document.addEventListener('DOMContentLoaded', function() {
         botoesEditar[i].addEventListener('click', function() {
             var linha = this.parentNode.parentNode;
             var cells = linha.getElementsByTagName('td');
-
             document.getElementById('nome').value = cells[0].textContent;
             document.getElementById('email').value = cells[1].textContent;
+            document.getElementById('id').value = linha.rowIndex; 
         });
     }
     document.getElementById('formulario').addEventListener('submit', function(event) {
         event.preventDefault();      
         var nome = document.getElementById('nome').value;
         var email = document.getElementById('email').value;
+        let linha =document.getElementById("tabelaUsuarios").rows[document.getElementById('id').value]
+        linha.cells[0].innerHTML=nome
+        linha.cells[1].innerHTML=email
         console.log("Dados editados:");
         console.log("Nome:", nome);
         console.log("E-mail:", email);
